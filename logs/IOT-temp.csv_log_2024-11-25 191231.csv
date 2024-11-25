@@ -1,0 +1,6 @@
+Timestamp >>> 2024-11-25 191231 : Rows containing incorrect datatype of temperature are removed and moved to C:\Jupyter Notebook\quarantine\IOT-temp.csv_quarantine_2024-11-25 191231.csv.
+Timestamp >>> 2024-11-25 191231 : Rows containing invalid dates are removed and moved to C:\Jupyter Notebook\quarantine\IOT-temp.csv_quarantine_2024-11-25 191231.csv.
+Timestamp >>> 2024-11-25 191232 : Rows containing missing are removed and moved to C:\Jupyter Notebook\quarantine\IOT-temp.csv_quarantine_2024-11-25 191231.csv.
+Timestamp >>> 2024-11-25 191232 : Rows containing invalid temperature readings are removed and moved to C:\Jupyter Notebook\quarantine\IOT-temp.csv_quarantine_2024-11-25 191231.csv.
+Timestamp >>> 2024-11-25 191232 : Duplicate rows removed and moved to C:\Jupyter Notebook\quarantine\IOT-temp.csv_quarantine_2024-11-25 191231.csv.
+Timestamp >>> 2024-11-25 191232 : Removed rows percentage due to missing and incorrect values is 0.008.
