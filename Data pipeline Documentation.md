@@ -8,17 +8,17 @@ Data pipeline Documentation
     -Architecture diagram
         ![Architecture](architecture_diagram.jpg)
 
-    1.1 Data Ingestion layer
-    The Data Ingestion Layer is responsible for monitoring the folder C:\\Jupyter Notebook\\data for incoming CSV files. The watchdog library is used to watch this folder and trigger processing when a new file is created.
+    1.1. Data Ingestion layer
+        The Data Ingestion Layer is responsible for monitoring the folder C:\\Jupyter Notebook\\data for incoming CSV files. The watchdog library is used to watch this folder and trigger processing when a new file is created.
         - Watchdog: Used to detect when new files are created in the specified directory.
         - File Event Handler: The MyHandler class is a FileSystemEventHandler that is triggered when new files are created in the monitored directory.
         - Retry Mechanism: The tenacity library is used to implement a retry mechanism in case of  errors during file processing.
-    1.2 Data Processing layer
-    This layer performs the transformation of raw data like validation, cleaning, handling missing values, aggregation.
+    1.2. Data Processing layer
+        This layer performs the transformation of raw data like validation, cleaning, handling missing values, aggregation.
         - Validate and Transform: The validate_and_transform function is used to clean the data (e.g., handle missing values, check for valid temperature readings).
         - Aggregate Data: The calculate_aggregated_metrics function computes metrics such as min, max, average, and standard deviation for sensor data and tags the data with more information.
-    1.3 Data Storage layer
-    The Data Storage Layer stores processed data in a PostgreSQL database for easy querying and analysis. Two primary tables are used:
+    1.3. Data Storage layer
+        The Data Storage Layer stores processed data in a PostgreSQL database for easy querying and analysis. Two primary tables are used:
         - Raw Sensor Data: Stores raw data before cleaning.
         - Cleaned Sensor Data: Stores cleaned and transformed data.
         - Aggregated Metrics: Stores aggregated metrics (e.g., average temperature, min, max, std) for each sensor.
