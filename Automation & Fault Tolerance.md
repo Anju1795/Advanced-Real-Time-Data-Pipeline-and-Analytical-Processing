@@ -1,4 +1,4 @@
-Automation & Fault Tolerance
+# Automation & Fault Tolerance
     -To ensure that the data pipeline runs continuously without manual intervention and remains tolerant to failures, we need to design it with automation, error handling, and fault tolerance mechanisms.
 
 1. Continuos execution

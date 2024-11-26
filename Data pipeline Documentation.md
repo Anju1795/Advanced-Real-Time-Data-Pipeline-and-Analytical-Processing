@@ -11,6 +11,7 @@ Data pipeline Documentation
         The Data Ingestion Layer is responsible for monitoring the folder C:\\Jupyter Notebook\\data for incoming CSV files. The watchdog library is used to watch this folder and trigger processing when a new file is created.
         - Watchdog: Used to detect when new files are created in the specified directory.
         - File Event Handler: The MyHandler class is a FileSystemEventHandler that is triggered when new files are created in the monitored directory.
+        - Threading : Used for concurrent processing of files if multiple files are received at the same time in the folder.
         - Retry Mechanism: The tenacity library is used to implement a retry mechanism in case of  errors during file processing.
     2. Data Processing layer
         This layer performs the transformation of raw data like validation, cleaning, handling missing values, aggregation.

@@ -1,4 +1,4 @@
-Instructions for setting up and running the pipeline locally
+# Instructions for setting up and running the pipeline locally
 
 1. Install Python environment Python 3.x
 2. Required Python Libraries: The following Python libraries are needed:
@@ -9,7 +9,7 @@ Instructions for setting up and running the pipeline locally
     - datetime
     - install using the below command:
         pip install pandas watchdog tenacity
-3. Running the pipeline locally
+3. Running and testing the pipeline locally
     - Monitor the folder C:\\Jupyter Notebook\\data for incoming csv files. 
     When a new file is added to this directory, it triggers the pipeline to process the file.
     - Start the python script using:
@@ -17,6 +17,7 @@ Instructions for setting up and running the pipeline locally
     - Add file in the folder for processing.
         Place CSV files in the folder specified in the path variable C:\\Jupyter Notebook\\data.
         The watchdog observer will automatically pick up new files and start processing them.
+    For simulating missing, corrupt and out of range values, few rows in the dataset have been modified.
 4. Cleaning and Transformation
     - Validation and transformation : The raw data is validated and transformed by cleaning the invalid
     datatypes, missing values, out of range values etc.
@@ -31,3 +32,8 @@ Instructions for setting up and running the pipeline locally
     - The quarantine path is C:\\Jupyter Notebook\\quarantine which contains the quarantine files that 
     contains the invalid/missing rows. The filename will contain the name of the csv file and also the timestamp.
     eg. : IOT-temp.csv_quarantine_2024-11-25 144452
+
+# Additional informations:
+
+1. The sample dataset- Temperature Readings : IOT Devices, is downloaded from Kaggle. The dataset contains Temperature readings of an entreprise building room ( admin), both iniside and outside. This was recorded at random intervals.
+2. The created pipeline can be extended to incorporate additional sensor reading columns and validations, transformations and analysis can be done easily.

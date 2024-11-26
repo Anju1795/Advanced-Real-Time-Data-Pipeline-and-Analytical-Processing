@@ -1,4 +1,4 @@
-Scalability Considerations
+# Scalability Considerations
 
 -For scaling this pipeline to handle millions of files per day, we need to focus on handling high-volume data ingestion, processing, and storage while ensuring the system can scale horizontally.
 
