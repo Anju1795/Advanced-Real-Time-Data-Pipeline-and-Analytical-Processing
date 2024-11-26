@@ -1,0 +1,3 @@
+raw_id,room_id,out_in,min_temp,max_temp,avg_temp,std_dvn,data_source,file_name,processed_time
+1,Room Admin,0,21.0,41.0,30.454035984662276,2.2382163194589846,C:\Jupyter Notebook\data,IOT-temp - Copy.csv,2024-11-26 12:25:16
+2,Room Admin,1,24.0,50.0,36.26466552759656,5.716660467324919,C:\Jupyter Notebook\data,IOT-temp - Copy.csv,2024-11-26 12:25:16
