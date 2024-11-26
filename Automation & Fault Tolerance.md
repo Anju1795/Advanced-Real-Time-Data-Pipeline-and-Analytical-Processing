@@ -1,5 +1,5 @@
 # Automation & Fault Tolerance
-    -To ensure that the data pipeline runs continuously without manual intervention and remains tolerant to failures, we need to design it with automation, error handling, and fault tolerance mechanisms.
+To ensure that the data pipeline runs continuously without manual intervention and remains tolerant to failures, we need to design it with automation, error handling, and fault tolerance mechanisms.
 
 1. Continuos execution
     -We can use cloud functions in Google cloud to trigger the function when new files are received in cloud storage.
