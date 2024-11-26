@@ -1,0 +1,3 @@
+Timestamp >>> 2024-11-26 164845 : Invalid column names. Skipping the file.
+Timestamp >>> 2024-11-26 164845 : Rows containing incorrect datatype of temperature are removed and moved to C:\Jupyter Notebook\quarantine\iot_telemetry_data - Copy.csv_quarantine_2024-11-26 164845.csv.
+Timestamp >>> 2024-11-26 164845 : Rows containing invalid dates are removed and moved to C:\Jupyter Notebook\quarantine\iot_telemetry_data - Copy.csv_quarantine_2024-11-26 164845.csv.

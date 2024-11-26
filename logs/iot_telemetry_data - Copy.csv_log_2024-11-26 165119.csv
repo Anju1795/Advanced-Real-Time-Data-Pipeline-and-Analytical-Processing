@@ -1,0 +1,5 @@
+Timestamp >>> 2024-11-26 165119 : Invalid column names Index(['ts', 'device', 'co', 'humidity', 'light', 'lpg', 'motion', 'smoke',
+       'temp'],
+      dtype='object'). Skipping the file. Please check log for more information
+Timestamp >>> 2024-11-26 165119 : Rows containing incorrect datatype of temperature are removed and moved to C:\Jupyter Notebook\quarantine\iot_telemetry_data - Copy.csv_quarantine_2024-11-26 165119.csv.
+Timestamp >>> 2024-11-26 165119 : Rows containing invalid dates are removed and moved to C:\Jupyter Notebook\quarantine\iot_telemetry_data - Copy.csv_quarantine_2024-11-26 165119.csv.

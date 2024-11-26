@@ -10,7 +10,19 @@ Transform the data to standard format.
 logging.basicConfig(level=logging.INFO)
 
 def validate_and_transform(sensor_data, log_file, quarantine_file):
-    logging.info("Validation and transformation of sensor data")
+    logging.info("Validation and transformation of sensor data.")
+
+    #check if the file has valid column names
+    required_columns = ['id', 'room_id/id', 'noted_date', 'temp', 'out/in']
+    if not all(col in sensor_data.columns for col in required_columns):
+        logging.info("Invalid column names of sensor data. Skipping the file. Please check log for more information")
+        update_log(log_file, f"Timestamp >>> {format(datetime.now().strftime("%Y-%m-%d %H%M%S"))} : Invalid column names {sensor_data.columns}. Skipping the file.\n")
+        return pd.DataFrame()
+
+    if sensor_data.empty:
+        logging.info("Empty file recieved. Skipping the file")
+        update_log(log_file, f"Timestamp >>> {format(datetime.now().strftime("%Y-%m-%d %H%M%S"))} : Empty file recieved. Skipping the file.\n")
+        return pd.DataFrame()
     rows_before = len(sensor_data)
     sensor_data = standardize_column_names(sensor_data)
     cleaned_data = handleDataType(sensor_data, log_file, quarantine_file)
@@ -38,7 +50,7 @@ def validate_and_transform(sensor_data, log_file, quarantine_file):
 
     #Logging the percentage of rows removed
     rows_after = len(cleaned_data)
-    removed_percentage = ((rows_before - rows_after) / rows_before) * 100
+    removed_percentage = round(((rows_before - rows_after) / rows_before) * 100, 3)
     logging.info("Writing percentage of removed rows to log file")
     update_log(log_file, f"Timestamp >>> {format(datetime.now().strftime("%Y-%m-%d %H%M%S"))} : Removed rows percentage due to missing and incorrect values is {removed_percentage}.")
 
@@ -54,6 +66,7 @@ def standardize_column_names(sensor_data):
         'Humidity': 'humidity',
         'humidity': 'humidity',
         'noted_date': 'noted_date',
+        'ts': 'noted_date',
         'date': 'noted_date',
         'Smoke': 'smoke',
         'smoke': 'smoke'

@@ -37,12 +37,18 @@ class MyHandler(FileSystemEventHandler):
             #check if file is fully written before processing
             while not self.is_file_ready(event.src_path):
                 time.sleep(1)
+            if not file_name.endswith('.csv'):
+                logging.error(f"Not a CSV file {event.src_path}, timestamp: {datetime.now()}")
+                update_log(log_file, f"Timestamp >>> {format(datetime.now().strftime("%Y-%m-%d %H%M%S"))} : File not in csv format\n")
+                return
             file = pd.read_csv(event.src_path)
             sensor_data = pd.DataFrame(file)
             transformed_data = validate_and_transform(sensor_data, log_file, quarantine_file)
-            tagged_data = aggregate_and_tag_data(transformed_data, path, file_name)
+            if not transformed_data.empty:
+                tagged_data = aggregate_and_tag_data(transformed_data, path, file_name)
         except Exception as e:
             logging.error(f"Error processing file {event.src_path}: {e}, timestamp: {datetime.now()}")
+            update_log(log_file, f"Timestamp >>> {format(datetime.now().strftime("%Y-%m-%d %H%M%S"))} : Error processing ile/Permission denied.\n")
             raise e
 
     def is_file_ready(self, file_path):
