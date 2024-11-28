@@ -4,7 +4,12 @@
 
     In the dataset used(IOT-temp.csv), the attributes id, room_id, noted_date, temp, out_in 
 are allowed to have Null values and different datatypes for temperature readings before cleaning the data.
-For simulation, we used string/out of range values for temperature readings and null values for noted_date, id columns.
+For simulation, we used string/out of range values for temperature readings and null values for noted_date,
+ id columns.
+
+Storing the raw data is to save the records of all data recieved. We can even skip this and store the 
+cleaned data and keep track of the invalid/missing rows from the quarantine folder. Here I have written
+schema for raw data and cleaned data.
 '''
 
 CREATE TABLE raw_sensor_data(
